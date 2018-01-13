@@ -1,0 +1,14 @@
+{%    extends 'layout.html'    %}
+        {%block body%}
+
+       
+              <h1> {{article1.title}} </h1> was written by <h2>{{article1.author}}</h2> on <strong>{{article1.created_date}}</strong>
+              <hr>
+              <div class="info">
+                        {{article1.body| safe}}
+
+              </div>
+        
+        
+    
+        {%endblock%}

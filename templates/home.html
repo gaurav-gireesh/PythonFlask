@@ -1,0 +1,22 @@
+{%
+    extends 'layout.html'
+
+    %}
+    {%block body%}
+<div class="jumbotron" style="text-align:center">
+    <h1>Welcome to Gaurav Gireesh's Demo Application</h1>
+    <p class="lead">
+
+            This is a sample app built using Python and Flask Framework for building restful web services in Python.
+            We have other extensions used in here as:
+            mysql-server, libmysqlclient-dev, flask-mysql, passlib and python-wtf
+
+
+    </p>
+    {% if session.logged_in == NULL%}
+        <a href="/register" class="btn btn-primary btn-lg">Register</a>
+        <a href="/login" class="btn btn-success btn-lg">Login</a>
+
+    {%endif%}
+</div>
+    {%endblock%}

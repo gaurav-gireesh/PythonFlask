@@ -1,0 +1,42 @@
+{%    extends 'layout.html'    %}
+        {%block body%}
+
+       <!-- <ul class="list-group">
+           {% for article in articlesList %}
+
+           <li class="list-group-item">
+                <h2>
+                    <a href="/article/{{article.id}}">{{ article.title }}</a>
+                </h2>
+            </li>
+
+            {% endfor %}
+       </ul> -->
+       <table class="table table-striped">
+            <tr>
+              <th>ID</th>
+              <th>TITLE</th>
+              <th>AUTHOR</th>
+              <th>CREATED DATE</th>
+              
+            </tr>
+            {% for article in articlesList  %}
+            
+            <tr>
+              <td>{{article.id}}</td>
+              <td><a href="/article/{{article.id}}">{{article.title}}</a></td>
+              <td>{{article.author}}</td>
+              <td>{{article.created_date}}</td>
+              
+    
+    
+    
+            </tr>
+        
+            {%endfor%}
+    
+    
+    
+          </table>
+    
+        {%endblock%}
