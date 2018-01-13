@@ -1,0 +1,29 @@
+
+<!-- This is the Navbar primarily for navigation through my website -->
+<nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/">Flask App</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/articles">Articles</a></li>
+           
+           
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            {%  if 'username' in session %}
+                <li><a href="/dashboard"><span class="glyphicon glyphicon-log-in"></span> Dashboard</a></li>
+                
+                <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                {% else %}
+
+                <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+                <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                {%   endif %}
+
+        </ul>
+        </div>
+</nav>

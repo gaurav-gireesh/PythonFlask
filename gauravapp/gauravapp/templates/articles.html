@@ -1,0 +1,32 @@
+
+{% extends 'layout.html' %}
+{% block body%}
+<table class="table table-striped">
+        <tr>
+            <th>ID</th>
+            <th>TITLE</th>
+            <th>AUTHOR</th>
+            <th>BODY</th>
+            <th>CREATED DATE</th>
+            
+
+        </tr>
+        {%  for article in articles%}
+        <tr>
+           <td>{{article[0]}}</td> 
+           <td><a href="{{url_for('article',id=article[0])}}">{{article[1]}}</a></td> 
+           <td>{{article[3]}}</td> 
+           <td>{{article[2]}}</td> 
+           <td>{{article[4]}}</td> 
+           
+           </tr>
+
+
+
+
+        {%    endfor %}
+
+
+{%endblock%}
+
+    </table>

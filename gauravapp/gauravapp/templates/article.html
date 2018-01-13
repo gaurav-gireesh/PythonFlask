@@ -1,0 +1,14 @@
+{%  extends 'layout.html'   %}
+
+
+{%  block body   %}
+<h1>{{article[1]}}</h1> was created by <h2>{{article[3]}} </h2> on {{article[4]}}
+
+<div class="info">
+    {{article[2]|safe}}
+
+</div>
+    
+
+
+{%  endblock   %}

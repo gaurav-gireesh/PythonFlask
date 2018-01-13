@@ -1,0 +1,64 @@
+{%  extends 'layout.html'   %}
+
+
+{%  block body   %}
+<div class="jumbotron">
+        <h1>Welcome to the Flask app</h1>  
+        <div><h2>{{session['username']}}</h2></div>
+        <hr>
+       
+        
+</div>
+<div>
+        <p>
+                <a href="/add_article" class="btn btn-primary">Add Article</a>
+
+        </p>
+
+        {%  if articles   %}
+        <div>
+                <table class="table table-striped">
+                    <tr>
+                        <th>ID</th>
+                        <th>TITLE</th>
+                        <th>AUTHOR</th>
+                        <th>BODY</th>
+                        <th>CREATED DATE</th>
+                        <th></th>
+                        <th></th>
+
+                    </tr>
+                    {%  for article in articles%}
+                    <tr>
+                       <td>{{article[0]}}</td> 
+                       <td>{{article[1]}}</td> 
+                       <td>{{article[3]}}</td> 
+                       <td>{{article[2]}}</td> 
+                       <td>{{article[4]}}</td> 
+                       <td> <a href="/edit_article/{{article[0]}}" class="btn btn-primary pull-right">EDIT</a>            </td> 
+                       <td>  <form action="{{url_for('delete_article',id=article[0])}}" method="post">
+                            <input type="hidden" name="_method" value="Delete">
+                            <input type ="submit" value="DELETE" class="btn btn-danger pull-right">
+
+
+                       </form>  </td>
+                       </tr>
+
+
+
+
+                    {%    endfor %}
+
+
+
+
+                </table>
+
+        </div>
+        {%  endif   %}
+
+
+</div>
+
+
+{%  endblock   %}

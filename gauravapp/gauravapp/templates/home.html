@@ -1,0 +1,25 @@
+{%  extends 'layout.html'   %}
+
+
+{%  block body   %}
+<div class="jumbotron" style="text-align:center">
+        <h1>Gaurav Gireesh's Flask Venture begins here....</h1>
+        <p>
+            It is a sample application wriiten using Flask framework and other extensions!
+            <strong>GO BONKERS!!</strong>
+
+
+
+
+
+        </p>
+        {%   if 'username' not in session %}
+
+        <a href="/register" class="btn btn-primary">Register</a>
+        <a href="/login" class="btn btn-success">Login</a>
+        {%endif%}
+
+</div>
+
+
+{%  endblock   %}
